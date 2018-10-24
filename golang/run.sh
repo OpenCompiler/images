@@ -1,5 +1,5 @@
 #!/bin/bash
-go build ./main.go | awk '{print "go:$0";fflush()}'
+go build ./main.go |& awk '{print "go:"$0;fflush()}'
 status_code=$?
 if [ ${status_code} -ne 0 ];then
 	echo "Exit Code: ${status_code}"

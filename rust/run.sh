@@ -1,5 +1,5 @@
 #!/bin/bash
-rustc ./main.rs | awk '{print "rustc:$0";fflush()}'
+rustc ./main.rs |& awk '{print "rustc:"$0;fflush()}'
 status_code=$?
 if [ ${status_code} -ne 0 ];then
 	echo "Exit Code: ${status_code}"

@@ -1,5 +1,5 @@
 #!/bin/bash
-gcc -ggdb -o ./main ./main.c | awk '{print "gcc:$0";fflush()}'
+gcc -ggdb -o ./main ./main.c |& awk '{print "gcc:"$0;fflush()}'
 status_code=$?
 if [ ${status_code} -ne 0 ];then
 	echo "Exit Code: ${status_code}"
